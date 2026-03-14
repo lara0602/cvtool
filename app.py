@@ -84,7 +84,7 @@ def generate_full_content(jd_text, resume_text):
             "max_tokens": 12000,
             "stream": False
         }
-        response = requests.post(url, headers=headers, json=data, timeout=60)
+        response = requests.post(url, headers=headers, json=data, timeout=300)
         response.raise_for_status()
         result_data = response.json()
         if "choices" in result_data and len(result_data["choices"]) > 0:
